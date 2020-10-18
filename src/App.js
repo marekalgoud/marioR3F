@@ -1,7 +1,7 @@
 // import * as THREE from 'three'
 // import ReactDOM from 'react-dom'
 import React from 'react'
-import { Canvas, useFrame } from 'react-three-fiber'
+import { Canvas } from 'react-three-fiber'
 import { Physics, usePlane, useBox } from '@react-three/cannon'
 import { OrbitControls } from '@react-three/drei'
 
@@ -16,7 +16,7 @@ function Plane(props) {
 }
 
 function Cube({ position, color }) {
-  const [ref, api] = useBox(() => ({
+  const [ref] = useBox(() => ({
     mass: 1000,
     args: [1, 1, 1],
     position
