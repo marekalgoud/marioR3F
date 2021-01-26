@@ -62,14 +62,14 @@ const mario = [
 const MarioCube = mario.map((line, x) => {
   return line.map((color, y) => {
     return (
-      <Cube receiveShadow castShadow position={[y * 1.2 - ((line.length / 2) * 1.2), Math.random() * 50, x * 1.2 - ((mario.length / 2) * 1.2)]} color={color} />
+      <Cube receiveShadow castShadow position={[y * 1.2 - ((line.length / 2) * 1.2), Math.random() * 50 + 50, x * 1.2 - ((mario.length / 2) * 1.2)]} color={color} />
     )
   })
 })
 
 export default function App() {
   return (
-    <Canvas shadowMap colorManagement gl={{ alpha: false }} camera={{ position: [0, 60, 0], fov: 50 }}>
+    <Canvas shadowMap colorManagement gl={{ alpha: false }} camera={{ position: [0, 50, 50], fov: 50 }}>
       <color attach="background" args={['lightblue']} />
       <hemisphereLight intensity={0.35} />
       <spotLight position={[0, 100, 0]} angle={0.3} penumbra={1} intensity={1} castShadow shadow-mapSize-width={256} shadow-mapSize-height={256} />
